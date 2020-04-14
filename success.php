@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,13 +30,19 @@
     <div class="row">
       <div class="col-sm-6 text-center">
         <i class="fa fa-check-circle"></i>
-        <h3 class="a">Yay! Your Order has been placed</h3>
+        <h3 class="a">Yay! Your Order #<?php echo $_SESSION['orderId'] ?> has been placed</h3>
       </div>
     </div>
     <div class="row">
+	<?php if(isset($_SESSION['sessionId'])) { ?>
       <div class="col-sm-6 text-center">
+        <a href="after_login.php"><span class="arrow"></span>Return To Homepage</a>
+      </div>
+	<?php } else{ ?>
+	<div class="col-sm-6 text-center">
         <a href="homepage.php"><span class="arrow"></span>Return To Homepage</a>
       </div>
+	<?php } ?>  
     </div>
   </div>
 
@@ -44,18 +53,18 @@
         <div class="col-sm-3">
           <h5>Get to Know Us</h5>
           <br>
-          <p><a href="about_us.html.html" target="_blank">About Us</a></p>
-          <p><a href="stories.html" target="_blank">MeltinPot Stories</a></p>
-          <p><a href="blog.html" target="_blank">Blog</a></p>
-          <p><a href="news.html" target="_blank">News</a></p>
+          <p><a href="about_us.php.php" target="_blank">About Us</a></p>
+          <p><a href="stories.php" target="_blank">MeltinPot Stories</a></p>
+          <p><a href="blog.php" target="_blank">Blog</a></p>
+          <p><a href="news.php" target="_blank">News</a></p>
         </div>
         <div class="col-sm-3">
           <h5>Let Us Help You</h5>
           <br>
-          <p><a href="account_details.html" target="_blank">Account Details</a></p>
-          <p><a href="order_history.html" target="_blank">Order History</a></p>
-          <p><a href="faq.html" target="_blank">FAQs</a></p>
-          <p><a href="contact_us.html" target="_blank">Contact Us</a></p>
+          <p><a href="account_details.php" target="_blank">Account Details</a></p>
+          <p><a href="order_history.php" target="_blank">Order History</a></p>
+          <p><a href="faq.php" target="_blank">FAQs</a></p>
+          <p><a href="contact_us.php" target="_blank">Contact Us</a></p>
         </div>
         <div class="col-sm-3"></div>
       </div>
@@ -66,9 +75,12 @@
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.html" target="_blank">Terms of Service</a>
+          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
           &nbsp&nbsp&nbsp
-          <a href="privacy.html" target="_blank">Privacy</a>
+          <a href="privacy.php" target="_blank">Privacy</a>
+        </div>
+        <div class="col text-right">
+          <a href="admin.php" target="_blank">Admin Login</a>
         </div>
       </div>
     </div>

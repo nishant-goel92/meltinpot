@@ -16,9 +16,11 @@ $num = mysqli_num_rows($result);
 if($num == 1){
 	$r = mysqli_fetch_assoc($result);
 	$_SESSION['sessionId'] = $r['firstName'];
+	$_SESSION['userId'] = $r['email'];
 	header('location:after_login.php');
 }
 else {
+	$_SESSION['isLoggedOut'] = "signinfailed";
 	header('location:sign_in.php');
 	
 }

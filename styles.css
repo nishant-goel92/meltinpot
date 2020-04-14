@@ -568,10 +568,10 @@ th {
 th, td {
   padding: 5px;
 }
-table td:nth-child(1) {
+.checkout_home table td:nth-child(1) {
   width: 50px;
 }
-table th:nth-child(3), td:nth-child(3) {
+.checkout_home table th:nth-child(3), .checkout_home td:nth-child(3) {
   width: 100px;
   text-align: right;
 }
@@ -587,6 +587,14 @@ input[type="text"]#item_price{
     width: 75px;
     border: none;
     background: white;
+}
+.admin_home {
+  padding: 15px;
+  width: 100%;
+  height: auto;
+}
+.admin_col {
+  padding: 20px;
 }
 @media only screen and (max-width: 400px) {
   .homepage_home, .signin_home, .signup_home {

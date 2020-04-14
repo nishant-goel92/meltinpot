@@ -16,7 +16,7 @@ $result = mysqli_query($con,$s);
 $num = mysqli_num_rows($result);
 
 if($num == 1){
-	echo "User already registered!";
+	$_SESSION['isRegister'] = "false";
 }
 else {
 	$reg = "insert into users(firstName, lastName, email, password) values ('$fname','$lname','$email','$psw')";

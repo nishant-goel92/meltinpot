@@ -1,3 +1,16 @@
+<?php
+session_start();
+if(isset($_POST['pasta_cart']))
+{
+		$_SESSION['products'][] = array('id'=>'Pasta Primevera', 'quantity'=>$_POST['pasta_qty'], 'price'=>'9.99',);
+        //header("location: order_checkout.php");
+}
+else if(isset($_POST['spaghetti_cart']))
+{
+        $_SESSION['products'][] = array('id'=>'Spaghetti', 'quantity'=>$_POST['spaghetti_qty'], 'price'=>'9.99',);
+        //header("location: order_checkout.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +30,12 @@
   <div class="card sticky-top">
     <div class="row">      
       <div class="col-10">
-        <a href="homepage.html">
+        <a href="homepage.php">
           <img id = "logo1" src="Images/Logo/logo.jpg" alt="Logo">
         </a>
       </div>
       <div class="col-2">
-        <a href="order_checkout.html">
+        <a href="order_checkout.php">
           <img src="Images/Logo/basket.jpg" class="rounded-circle" alt="Cart" width="35" height="35" align="right">
         </a>
       </div>
@@ -41,17 +54,6 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
               <ul class="navbar-nav">
-                <li class="nav-item">
-                  <h6 class="a">Cuisine</h6>
-                  <select class="custom-select select_cuisine" id="change_cuisine">
-                    <option value="" selected disabled hidden>Choose here</option>
-                    <option value="italian">Italian</option>
-                    <option value="mexican">Mexican</option>
-                    <option value="chinese">Chinese</option>
-                    <option value="indian">Indian</option>
-                    <option value="dessert">Dessert</option>
-                  </select>
-                </li>
                 <li class="nav-item">
                   <h6 class="a">Spicy</h6>
                   <input class="radio_cuisine" type="radio" id="s_mild_m" name="spicy" value="s_mild">
@@ -93,20 +95,6 @@
           <div class="row cuisine_filter_header">
             <h4 class="a">Filters</h4>
           </div>
-          <div class="row">
-            <h6 class="a">Cuisine</h6>
-          </div>
-          <div class="row cuisine_row">
-            <select class="custom-select select_cuisine" id="change_cuisine">
-              <option value="" selected disabled hidden>Choose here</option>
-              <option value="italian">Italian</option>
-              <option value="mexican">Mexican</option>
-              <option value="chinese">Chinese</option>
-              <option value="indian">Indian</option>
-              <option value="dessert">Dessert</option>
-            </select>
-          </div>
-          <br>
           <div class="row">
             <h6 class="a">Spicy</h6>
           </div>
@@ -178,10 +166,10 @@
             <div class="row">
               <p class="a">Fresh penne pasta and seasonal vegetables tossed with garlic, olive oil, diced tomatoes and parmesan cheese</p>
             </div>
-            <form class="pasta_count" onchange="location.href='#">
+            <form action="" method="post" class="pasta_count" onchange="location.href='#">
               <div class="row cuisine_row">
                 <div class="col-3">
-                  <input type="text" id="item_price" value="$9.99" disabled />
+                  <input type="text" name = "pasta_price" id="item_price" value="$9.99" disabled />
                 </div>
                 <div class="col-3">
                   <img src="Images/Food/spicy_medium.jpg" class="img_spicy">
@@ -196,7 +184,7 @@
               </div>
               <div class="row cuisine_row">
                 <div class="col-4">
-                  <select class="custom-select select_qty" id="quantity">
+                  <select name = "pasta_qty" class="custom-select select_qty" id="quantity">
                     <option value="1" selected>1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -205,7 +193,7 @@
                   </select>
                 </div>
                 <div class="col-8">
-                  <button type="submit" class="button_cart">Add to Cart</button>
+                  <button name = "pasta_cart" type="submit" class="button_cart">Add to Cart</button>
                 </div>
               </div>
             </form>
@@ -255,10 +243,10 @@
             <div class="row">
               <p class="a">Spaghetti and tomato sauce with a toasted baguette</p>
             </div>
-            <form class="spaghetti_count" onchange="location.href='#">
+            <form action="" method="post" class="spaghetti_count" onchange="location.href='#">
               <div class="row cuisine_row">
                 <div class="col-3">
-                  <input type="text" id="item_price" value="$9.99" disabled />
+                  <input type="text" name = "spaghetti_price" id="item_price" value="$9.99" disabled />
                 </div>
                 <div class="col-3">
                   <img src="Images/Food/spicy_mild.jpg" class="img_spicy">
@@ -273,7 +261,7 @@
               </div>
               <div class="row cuisine_row">
                 <div class="col-4">
-                  <select class="custom-select select_qty" id="quantity">
+                  <select name = "spaghetti_qty" class="custom-select select_qty" id="quantity">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -282,7 +270,7 @@
                   </select>
                 </div>
                 <div class="col-8">
-                  <button type = "submit" class="button_cart">Add to Cart</button>
+                  <button name = "spaghetti_cart" type = "submit" class="button_cart">Add to Cart</button>
                 </div>
               </div>
             </form>
@@ -299,31 +287,34 @@
         <div class="col-sm-3">
           <h5>Get to Know Us</h5>
           <br>
-          <p><a href="about_us.html.html" target="_blank">About Us</a></p>
-          <p><a href="stories.html" target="_blank">MeltinPot Stories</a></p>
-          <p><a href="blog.html" target="_blank">Blog</a></p>
-          <p><a href="news.html" target="_blank">News</a></p>
+          <p><a href="about_us.php.php" target="_blank">About Us</a></p>
+          <p><a href="stories.php" target="_blank">MeltinPot Stories</a></p>
+          <p><a href="blog.php" target="_blank">Blog</a></p>
+          <p><a href="news.php" target="_blank">News</a></p>
         </div>
         <div class="col-sm-3">
           <h5>Let Us Help You</h5>
           <br>
-          <p><a href="account_details.html" target="_blank">Account Details</a></p>
-          <p><a href="order_history.html" target="_blank">Order History</a></p>
-          <p><a href="faq.html" target="_blank">FAQs</a></p>
-          <p><a href="contact_us.html" target="_blank">Contact Us</a></p>
+          <p><a href="account_details.php" target="_blank">Account Details</a></p>
+          <p><a href="order_history.php" target="_blank">Order History</a></p>
+          <p><a href="faq.php" target="_blank">FAQs</a></p>
+          <p><a href="contact_us.php" target="_blank">Contact Us</a></p>
         </div>
         <div class="col-sm-3"></div>
       </div>
       <br>
       <div class="row">
         <div class="col text-left">
-          <a href="homepage.html" style="text-decoration: none">
+          <a href="homepage.php" style="text-decoration: none">
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.html" target="_blank">Terms of Service</a>
+          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
           &nbsp&nbsp&nbsp
-          <a href="privacy.html" target="_blank">Privacy</a>
+          <a href="privacy.php" target="_blank">Privacy</a>
+        </div>
+        <div class="col text-right">
+          <a href="admin.php" target="_blank">Admin Login</a>
         </div>
       </div>
     </div>

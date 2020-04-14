@@ -1,3 +1,16 @@
+<?php
+session_start();
+if(isset($_POST['cp_submit']))
+{
+		$_SESSION['products'][] = array('id'=>'Carrot Pudding', 'quantity'=>$_POST['cp_qty'], 'price'=>'4.99',);
+        //header("location: order_checkout.php");
+}
+else if(isset($_POST['t_submit']))
+{
+        $_SESSION['products'][] = array('id'=>'Tiramisu', 'quantity'=>$_POST['t_qty'], 'price'=>'4.99',);
+        //header("location: order_checkout.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +35,7 @@
         </a>
       </div>
       <div class="col-2">
-        <a href="order_checkout.html">
+        <a href="order_checkout.php">
           <img src="Images/Logo/basket.jpg" class="rounded-circle" alt="Cart" width="35" height="35" align="right">
         </a>
       </div>
@@ -41,17 +54,6 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
               <ul class="navbar-nav">
-                <li class="nav-item">
-                  <h6 class="a">Cuisine</h6>
-                  <select class="custom-select select_cuisine" id="change_cuisine">
-                    <option value="" selected disabled hidden>Choose here</option>
-                    <option value="italian">Italian</option>
-                    <option value="mexican">Mexican</option>
-                    <option value="chinese">Chinese</option>
-                    <option value="indian">Indian</option>
-                    <option value="dessert">Dessert</option>
-                  </select>
-                </li>
                 <li class="nav-item">
                   <h6 class="a">Price</h6>
                   <input class="radio_cuisine" type="radio" id="p_low_m" name="price" value="p_low">
@@ -84,20 +86,6 @@
           <div class="row cuisine_filter_header">
             <h4 class="a">Filters</h4>
           </div>
-          <div class="row">
-            <h6 class="a">Cuisine</h6>
-          </div>
-          <div class="row cuisine_row">
-            <select class="custom-select select_cuisine" id="change_cuisine">
-              <option value="" selected disabled hidden>Choose here</option>
-              <option value="italian">Italian</option>
-              <option value="mexican">Mexican</option>
-              <option value="chinese">Chinese</option>
-              <option value="indian">Indian</option>
-              <option value="dessert">Dessert</option>
-            </select>
-          </div>
-          <br>
           <div class="row">
             <h6 class="a">Price</h6>
           </div>
@@ -156,10 +144,10 @@
             <div class="row">
               <p class="a">Rich dessert made with fresh carrots, milk and sugar encapsulated within the generous amount of ghee</p>
             </div>
-            <form class="carrot_pudding_count" onchange="location.href='#">
+            <form action="" method = "post" class="carrot_pudding_count" onchange="location.href='#">
               <div class="row cuisine_row">
                 <div class="col-3">
-                  <input type="text" id="item_price" value="$4.99" disabled />
+                  <input type="text" name="cp_price" id="item_price" value="$4.99" disabled />
                 </div>
                 <div class="col-9">
                   <span class="fa fa-star checked"></span>
@@ -171,7 +159,7 @@
               </div>
               <div class="row cuisine_row">
                 <div class="col-4">
-                  <select class="custom-select select_qty" id="quantity">
+                  <select name="cp_qty" class="custom-select select_qty" id="quantity">
                     <option value="1" selected>1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -180,7 +168,7 @@
                   </select>
                 </div>
                 <div class="col-8">
-                  <button class="button_cart">Add to Cart</button>
+                  <button name = "cp_submit" class="button_cart">Add to Cart</button>
                 </div>
               </div>
             </form>
@@ -231,7 +219,7 @@
             <form class="tiramisu_count" onchange="location.href='#">
               <div class="row cuisine_row">
                 <div class="col-3">
-                  <input type="text" id="item_price" value="$4.99" disabled />
+                  <input name="t_price" type="text" id="item_price" value="$4.99" disabled />
                 </div>
                 <div class="col-9">
                   <span class="fa fa-star checked"></span>
@@ -243,7 +231,7 @@
               </div>
               <div class="row cuisine_row">
                 <div class="col-4">
-                  <select class="custom-select select_qty" id="quantity">
+                  <select name="t_qty" class="custom-select select_qty" id="quantity">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -252,7 +240,7 @@
                   </select>
                 </div>
                 <div class="col-8">
-                  <button class="button_cart">Add to Cart</button>
+                  <button name="t_submit" class="button_cart">Add to Cart</button>
                 </div>
               </div>
             </form>
@@ -269,18 +257,18 @@
         <div class="col-sm-3">
           <h5>Get to Know Us</h5>
           <br>
-          <p><a href="about_us.html.html" target="_blank">About Us</a></p>
-          <p><a href="stories.html" target="_blank">MeltinPot Stories</a></p>
-          <p><a href="blog.html" target="_blank">Blog</a></p>
-          <p><a href="news.html" target="_blank">News</a></p>
+          <p><a href="about_us.php.php" target="_blank">About Us</a></p>
+          <p><a href="stories.php" target="_blank">MeltinPot Stories</a></p>
+          <p><a href="blog.php" target="_blank">Blog</a></p>
+          <p><a href="news.php" target="_blank">News</a></p>
         </div>
         <div class="col-sm-3">
           <h5>Let Us Help You</h5>
           <br>
-          <p><a href="account_details.html" target="_blank">Account Details</a></p>
-          <p><a href="order_history.html" target="_blank">Order History</a></p>
-          <p><a href="faq.html" target="_blank">FAQs</a></p>
-          <p><a href="contact_us.html" target="_blank">Contact Us</a></p>
+          <p><a href="#" target="_blank">Account Details</a></p>
+          <p><a href="order_history.php" target="_blank">Order History</a></p>
+          <p><a href="faq.php" target="_blank">FAQs</a></p>
+          <p><a href="contact_us.php" target="_blank">Contact Us</a></p>
         </div>
         <div class="col-sm-3"></div>
       </div>
@@ -291,9 +279,12 @@
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.html" target="_blank">Terms of Service</a>
+          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
           &nbsp&nbsp&nbsp
-          <a href="privacy.html" target="_blank">Privacy</a>
+          <a href="privacy.php" target="_blank">Privacy</a>
+        </div>
+        <div class="col text-right">
+          <a href="admin.php" target="_blank">Admin Login</a>
         </div>
       </div>
     </div>
