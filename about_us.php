@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Error</title>
+  <title>About Us</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,9 +14,10 @@
 <body>
 
 <div class="page">
+  
   <div class="card sticky-top">
     <div class="row">      
-      <div class="col">
+      <div class="col-5">
         <a href="homepage.php">
           <img id = "logo1" src="Images/Logo/logo.jpg" alt="Logo">
         </a>
@@ -23,22 +25,32 @@
     </div>
   </div>
 
-  <div id="container-fluid" class="error_home">
+  <div class="about_us_home">
     <div class="row">
-      <div class="col text-center">
-        <p class="c">404</p>
-        <h3 class="a">Uh Oh, We lost you!</h3>
+      <div class="col checkout_header">
+        <h4 class="a">Our Story</h4>
       </div>
     </div>
     <div class="row">
-      <div class="col text-center">
-        <a href="homepage.php"><span class="arrow"></span>Return To Homepage</a>
+      <div class="col checkout_header">
+        <p class="a">MeltinPot, founded in College Station, Texas, is a company that aims to serve traditional, home-cooked meals from different cultures across the globe. MeltinPot serves as a meeting place for users to share their cuisines with people hailing from different parts of the world. Since its inception in 2016, the company has served over 500 customers from many areas of the world.</p>
       </div>
+    </div>
+    <div class="row">
+      <div class="col checkout_header">
+          <h4 class="a">Meet the team</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3"></div>
     </div>
   </div>
 
   <div class="jumbotron">
-    <div id="container-fluid">
+    <div id="container-fluid" class="about">
       <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-3">

@@ -29,14 +29,24 @@ else if(isset($_POST['t_submit']))
 <div class="page">
   <div class="card sticky-top">
     <div class="row">      
-      <div class="col-10">
+      <div class="col-5">
         <a href="homepage.php">
           <img id = "logo1" src="Images/Logo/logo.jpg" alt="Logo">
         </a>
       </div>
-      <div class="col-2">
+      <div class="col-6 text-right">
+        <?php 
+	if(isset($_SESSION['sessionId'])) {?>
+	<button type="button" class="btn login" disabled><?php echo $_SESSION['sessionId'] ?></button>
+	<button type="button" class="btn btn-danger login" onclick="location.href='logout.php'">Sign Out</button>
+<?php } else {?>
+	<button type="button" class="btn login" onclick="location.href='sign_in.php'">Sign In</button>
+    <button type="button" class="btn btn-danger login" onclick="location.href='sign_up.php'">Sign Up</button>
+<?php } ?>
+      </div>
+      <div class="col-1 cart_icon">
         <a href="order_checkout.php">
-          <img src="Images/Logo/basket.jpg" class="rounded-circle" alt="Cart" width="35" height="35" align="right">
+          <img src="Images/Logo/basket.jpg" class="img_cart" alt="Cart" data-toggle="modal" data-target="#cart_modal">
         </a>
       </div>
     </div>
@@ -168,7 +178,13 @@ else if(isset($_POST['t_submit']))
                   </select>
                 </div>
                 <div class="col-8">
-                  <button name = "cp_submit" class="button_cart">Add to Cart</button>
+                  <button name="cp_submit" type="submit" class="button_cart">Add to Cart</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4"></div>
+                <div class="col-8">
+                  <p class="d">Yay!! Item added to cart</p>
                 </div>
               </div>
             </form>
@@ -216,7 +232,7 @@ else if(isset($_POST['t_submit']))
             <div class="row">
               <p class="a">Classic Italian dessert made with mascarpone, lady fingers and espresso coffee</p>
             </div>
-            <form class="tiramisu_count" onchange="location.href='#">
+            <form action="" method = "post" class="tiramisu_count" onchange="location.href='#">
               <div class="row cuisine_row">
                 <div class="col-3">
                   <input name="t_price" type="text" id="item_price" value="$4.99" disabled />
@@ -240,7 +256,13 @@ else if(isset($_POST['t_submit']))
                   </select>
                 </div>
                 <div class="col-8">
-                  <button name="t_submit" class="button_cart">Add to Cart</button>
+                  <button name="t_submit" type="submit" class="button_cart">Add to Cart</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4"></div>
+                <div class="col-8">
+                  <p class="d">Yay!! Item added to cart</p>
                 </div>
               </div>
             </form>
@@ -257,7 +279,7 @@ else if(isset($_POST['t_submit']))
         <div class="col-sm-3">
           <h5>Get to Know Us</h5>
           <br>
-          <p><a href="about_us.php.php" target="_blank">About Us</a></p>
+          <p><a href="about_us.php" target="_blank">About Us</a></p>
           <p><a href="stories.php" target="_blank">MeltinPot Stories</a></p>
           <p><a href="blog.php" target="_blank">Blog</a></p>
           <p><a href="news.php" target="_blank">News</a></p>
@@ -292,6 +314,28 @@ else if(isset($_POST['t_submit']))
 
   <div class="footer">
     &copyDeveloped by Team 07
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="cart_modal">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="a">Cart Message</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p class="b">Your cart seems to be empty!!</p>
+        <p class="b">Please add some dishes to continue.</p> 
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -1,3 +1,14 @@
+<?php
+$con = mysqli_connect('localhost','root','');
+
+mysqli_select_db($con,'meltinpot');
+
+$usersQuery = "SELECT firstName, lastName, email, password from users";
+$ordersQuery = "SELECT orderId, userId, createdDate, total from orders";
+$addressQuery = "SELECT orderId, userId, state, city, zip, addressLine from address";
+$orderLineQuery = "SELECT orderId, userId, productId, quantity from orderLine";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,13 +54,17 @@
             </tr>
           </thead>
           <tbody>
+		  <?php 
+			$result = mysqli_query($con,$usersQuery);
+			while($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
+              <td><span class="text-muted"><?php echo $row['firstName']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['lastName']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['email']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['password']." ";?></span></td>
             </tr>
             <tr>
+			<?php } ?>
           </tbody>
         </table>
       </div>
@@ -67,15 +82,19 @@
             </tr>
           </thead>
           <tbody>
+		   <?php 
+			$result = mysqli_query($con,$addressQuery);
+			while($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
+              <td><span class="text-muted"><?php echo $row['orderId']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['userId']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['state']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['city']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['zip']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['addressLine']." ";?></span></td>
             </tr>
             <tr>
+			<?php } ?>
           </tbody>
         </table>
       </div>
@@ -93,13 +112,17 @@
             </tr>
           </thead>
           <tbody>
+		  <?php 
+			$result = mysqli_query($con,$ordersQuery);
+			while($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
+              <td><span class="text-muted"><?php echo $row['orderId']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['userId']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['createdDate']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['total']." ";?></span></td>
             </tr>
             <tr>
+			<?php } ?>
           </tbody>
         </table>
       </div>
@@ -115,13 +138,17 @@
             </tr>
           </thead>
           <tbody>
+		  <?php 
+			$result = mysqli_query($con,$orderLineQuery);
+			while($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
-              <td><span class="text-muted">ROW1</span></td>
+              <td><span class="text-muted"><?php echo $row['orderId']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['userId']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['productId']." ";?></span></td>
+              <td><span class="text-muted"><?php echo $row['quantity']." ";?></span></td>
             </tr>
             <tr>
+			<?php } ?>
           </tbody>
         </table>
       </div>
@@ -135,7 +162,7 @@
         <div class="col-sm-3">
           <h5>Get to Know Us</h5>
           <br>
-          <p><a href="about_us.php.php" target="_blank">About Us</a></p>
+          <p><a href="about_us.php" target="_blank">About Us</a></p>
           <p><a href="stories.php" target="_blank">MeltinPot Stories</a></p>
           <p><a href="blog.php" target="_blank">Blog</a></p>
           <p><a href="news.php" target="_blank">News</a></p>

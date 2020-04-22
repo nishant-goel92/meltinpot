@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +25,18 @@
         </a>
       </div>
       <div class="col-6 text-right">
-        <button type="button" class="btn login" onclick="location.href='sign_in.php'">Sign In</button>
-        <button type="button" class="btn btn-danger login" onclick="location.href='sign_up.php'">Sign Up</button>
+        <?php 
+	if(isset($_SESSION['sessionId'])) {?>
+	<button type="button" class="btn login" disabled><?php echo $_SESSION['sessionId'] ?></button>
+	<button type="button" class="btn btn-danger login" onclick="location.href='logout.php'">Sign Out</button>
+<?php } else {?>
+	<button type="button" class="btn login" onclick="location.href='sign_in.php'">Sign In</button>
+    <button type="button" class="btn btn-danger login" onclick="location.href='sign_up.php'">Sign Up</button>
+<?php } ?>
       </div>
       <div class="col-1 cart_icon">
         <a href="order_checkout.php">
-          <img src="Images/Logo/basket.jpg" class="rounded-circle" alt="Cart" width="35" height="35">
+          <img src="Images/Logo/basket.jpg" class="img_cart" alt="Cart" data-toggle="modal" data-target="#cart_modal">
         </a>
       </div>
     </div>
@@ -119,7 +128,7 @@
         <div class="col-sm-3">
           <h5>Get to Know Us</h5>
           <br>
-          <p><a href="about_us.php.php" target="_blank">About Us</a></p>
+          <p><a href="about_us.php" target="_blank">About Us</a></p>
           <p><a href="stories.php" target="_blank">MeltinPot Stories</a></p>
           <p><a href="blog.php" target="_blank">Blog</a></p>
           <p><a href="news.php" target="_blank">News</a></p>
@@ -154,6 +163,28 @@
 
   <div class="footer">
     &copyDeveloped by Team 07
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="cart_modal">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="a">Cart Message</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p class="b">Your cart seems to be empty!!</p>
+        <p class="b">Please add some dishes to continue.</p> 
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
 

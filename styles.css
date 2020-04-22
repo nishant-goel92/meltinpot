@@ -70,6 +70,11 @@ h5.a {
   font-style: italic;
   color: #ff0000; /* red */
 }
+h5.b {
+  font-family: "Verdana", cursive, sans-serif;
+  font-variant: small-caps;
+  color: #ff0000; /* red */
+}
 h6.a {
   font-family: "Verdana", cursive, sans-serif;
   font-variant: small-caps;
@@ -91,6 +96,12 @@ p.c {
   font-variant: small-caps;
   color: #ff0000; /* red */
 }
+p.d {
+  font-family: "Verdana", cursive, sans-serif;
+  font-variant: small-caps;
+  font-size: 14px;
+  color: #ff0000; /* red */
+}
 #logo1 {
   height: 40px;
   width: 180px;
@@ -101,6 +112,12 @@ p.c {
 #logo2 {
   height: 100px;
   width: 100px;
+}
+.img_cart {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 .homepage_home {
   height: 570px;
@@ -116,20 +133,26 @@ p.c {
   padding-top: 3.75%;
   padding-bottom: 1.875%;
 }
-.homepage_top_dishes {
-  /*height: 650px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 20px;
-  padding-bottom: 10px;*/
-  background-position: center;
-  background-color: #ffefef;
-  background-size: cover;
+.signin_home {
   height: auto;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-  padding-top: 1.25%;
-  padding-bottom: 0.625%;
+  /*padding: 100px;*/
+  background-image: url("Images/Background/background.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 8%;
+}
+.signup_home {
+  height: auto;
+  /*padding: 100px;*/
+  background-image: url("Images/Background/background.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 8%;
+}
+.checkout_home {
+  padding: 15px;
+  width: 100%;
+  height: auto;
 }
 .error_home {
   height: auto;
@@ -147,7 +170,41 @@ p.c {
   background-size: cover;
   padding: 8%;
 }
+.coming_soon_home {
+  height: 700px;
+  background-image: url("Images/Background/background_coming_soon.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 16%;
+}
+.about_us_home {
+  height: auto;
+  padding: 3%;
+}
+.homepage_top_dishes {
+  /*height: 650px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 10px;*/
+  background-position: center;
+  background-color: #ffefef;
+  background-size: cover;
+  height: auto;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 1.25%;
+  padding-bottom: 0.625%;
+}
+.future_pages_col {
+  padding-top: 13%;
+  padding-right: 9%;
+}
 .fa-check-circle {
+  font-size:180px;
+  color: #ff0000; /* red */
+}
+.fa-exclamation-circle {
   font-size:180px;
   color: #ff0000; /* red */
 }
@@ -161,37 +218,13 @@ p.c {
       -ms-transform: rotate(135deg);
           transform: rotate(135deg);
 }
-.error_home a {
+.error_home a, .success_home a, .coming_soon_home a {
   font-family: 'Raleway', sans-serif;
   display: inline-block;
   font-weight: 700;
   border-radius: 15px;
   text-decoration: none;
   color: #ff0000; /* red */
-}
-.success_home a {
-  font-family: 'Raleway', sans-serif;
-  display: inline-block;
-  font-weight: 700;
-  border-radius: 15px;
-  text-decoration: none;
-  color: #ff0000; /* red */
-}
-.signin_home {
-  height: auto;
-  /*padding: 100px;*/
-  background-image: url("Images/Background/background.jpg");
-  background-position: center;
-  background-size: cover;
-  padding: 8%;
-}
-.signup_home {
-  height: auto;
-  /*padding: 100px;*/
-  background-image: url("Images/Background/background.jpg");
-  background-position: center;
-  background-size: cover;
-  padding: 8%;
 }
 form {
   width: 400px;
@@ -434,11 +467,6 @@ a:link {
   background-color: #fa461f;
   border: 2px;
 }
-.checkout_home {
-  padding: 15px;
-  width: 100%;
-  height: auto;
-}
 .checkout_header {
   padding-left: 50px;
   padding-top: 10px;
@@ -532,14 +560,6 @@ form.checkout input[type=text] {
   background: none;
   border: 1px solid #808080; /* gray */;
 }
-form.checkout input[type=num] {
-  padding: 10px;
-  margin: 10px 0;
-  font-size: 17px;
-  width: 100%;
-  background: none;
-  border: 1px solid #808080; /* gray */;
-}
 form.checkout::after {
   content: "";
   clear: both;
@@ -552,12 +572,42 @@ form.checkout button {
   font-size: 17px;
   cursor: pointer;
 }
+form.payment input[type=text] {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 17px;
+  width: 100%;
+  border: 1px solid #808080; /* gray */;
+}
+form.payment input[type=number] {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 17px;
+  width: 100%;
+  border: 1px solid #808080; /* gray */;
+  -moz-appearance: textfield;
+}
+form.payment input::-webkit-outer-spin-button, form.payment input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+form.payment select {
+  margin: 10px 0;
+  font-size: 17px;
+  width: 100%;
+  border: 1px solid #808080; /* gray */;
+}
 form.payment button {
   width: 100%;
   padding: 10px;
   margin-top: 30px;
   font-size: 17px;
   cursor: pointer;
+}
+form.payment::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 table {
   width: 100%;
@@ -600,14 +650,23 @@ input[type="text"]#item_price{
   .homepage_home, .signin_home, .signup_home {
     background-image: url("Images/Background/background_mobile.jpg");
   }
-  .cart_icon {
-    display: none;
+  .error_home {
+    background-image: url("Images/Background/background_error_mobile.jpg");
+  }
+  .success_home {
+    background-image: url("Images/Background/background_success_mobile.jpg");
+  }
+  .coming_soon_home {
+    background-image: url("Images/Background/background_coming_soon_mobile.jpg");
   }
   .signin_home {
     height: 600px;
   }
   .signup_home {
     height: 900px;
+  }
+  .cart_icon {
+    display: none;
   }
   .heading {
     display: none;
@@ -667,6 +726,9 @@ input[type="text"]#item_price{
   h5.a {
     font-size: 16px;
   }
+  h5.b {
+    font-size: 18px;
+  }
   p.c {
     font-size: 60px;
   }
@@ -678,16 +740,17 @@ input[type="text"]#item_price{
     height: 75px;
     width: 75px;
   }
-  .error_home {
-    background-image: url("Images/Background/background_error_mobile.jpg");
-  }
   .error_home .homepage_cuisine {
     display: none;
   }
-  .success_home {
-    background-image: url("Images/Background/background_success_mobile.jpg");
-  }
   .fa-check-circle {
     font-size: 120px;
+  }
+  .fa-exclamation-circle {
+    font-size: 120px;
+  }
+  .future_pages_col {
+    padding-top: 50%;
+    padding-right: 9%;
   }
 }

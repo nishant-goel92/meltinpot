@@ -28,10 +28,20 @@ if(isset($_POST['payment_submit']))
 <div class="page">
   <div class="card sticky-top">
     <div class="row">      
-      <div class="col">
+      <div class="col-5">
         <a href="homepage.php">
           <img id = "logo1" src="Images/Logo/logo.jpg" alt="Logo">
         </a>
+      </div>
+      <div class="col-6 text-right">
+        <?php 
+	if(isset($_SESSION['sessionId'])) {?>
+	<button type="button" class="btn login" disabled><?php echo $_SESSION['sessionId'] ?></button>
+	<button type="button" class="btn btn-danger login" onclick="location.href='logout.php'">Sign Out</button>
+<?php } else {?>
+	<button type="button" class="btn login" onclick="location.href='sign_in.php'">Sign In</button>
+    <button type="button" class="btn btn-danger login" onclick="location.href='sign_up.php'">Sign Up</button>
+<?php } ?>
       </div>
     </div>
   </div>
@@ -110,7 +120,7 @@ if(isset($_POST['payment_submit']))
         <div class="col-sm-3">
           <h5>Get to Know Us</h5>
           <br>
-          <p><a href="about_us.php.php" target="_blank">About Us</a></p>
+          <p><a href="about_us.php" target="_blank">About Us</a></p>
           <p><a href="stories.php" target="_blank">MeltinPot Stories</a></p>
           <p><a href="blog.php" target="_blank">Blog</a></p>
           <p><a href="news.php" target="_blank">News</a></p>

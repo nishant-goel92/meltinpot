@@ -1,7 +1,10 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Error</title>
+  <title>Account Details</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,17 +26,21 @@
     </div>
   </div>
 
-  <div id="container-fluid" class="error_home">
+  <div id="container-fluid" class="coming_soon_home">
     <div class="row">
-      <div class="col text-center">
-        <p class="c">404</p>
-        <h3 class="a">Uh Oh, We lost you!</h3>
+      <div class="col-sm-6 text-center">
+        <i class="fa fa-exclamation-circle"></i>
+        <h2 class="a">Coming Soon</h2>
       </div>
-    </div>
-    <div class="row">
-      <div class="col text-center">
+      <div class="col-sm-6 text-center future_pages_col">
+        <h5 class="b">Damn!! You're fast.</h5>
+        <h5 class="b">You got there before us.</h5>
+	     <?php if(isset($_SESSION['sessionId'])) { ?>
+        <a href="after_login.php"><span class="arrow"></span>Return To Homepage</a>
+	     <?php } else{ ?>
         <a href="homepage.php"><span class="arrow"></span>Return To Homepage</a>
-      </div>
+	     <?php } ?>
+      </div> 
     </div>
   </div>
 
