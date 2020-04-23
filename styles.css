@@ -695,9 +695,9 @@ input[type="text"]#item_price{
   .signup_home {
     height: 900px;
   }
-  .cart_icon {
+  /*.cart_icon {
     display: none;
-  }
+  }*/
   .heading {
     display: none;
   }

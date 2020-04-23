@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Terms of Service</title>
+  <title>Terms & Conditions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -69,7 +69,7 @@ session_start();
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
+          <a href="terms_of_use.php" target="_blank">T&C</a>
           &nbsp&nbsp&nbsp
           <a href="privacy.php" target="_blank">Privacy</a>
         </div>

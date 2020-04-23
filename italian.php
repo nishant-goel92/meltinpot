@@ -34,7 +34,7 @@ else if(isset($_POST['spaghetti_cart']))
           <img id = "logo1" src="Images/Logo/logo.jpg" alt="Logo">
         </a>
       </div>
-      <div class="col-6 text-right">
+      <div class="col-5 text-right">
         <?php 
 	if(isset($_SESSION['sessionId'])) {?>
 	<button type="button" class="btn login" disabled><?php echo $_SESSION['sessionId'] ?></button>
@@ -44,7 +44,7 @@ else if(isset($_POST['spaghetti_cart']))
     <button type="button" class="btn btn-danger login" onclick="location.href='sign_up.php'">Sign Up</button>
 <?php } ?>
       </div>
-      <div class="col-1 cart_icon">
+      <div class="col-2 text-center">
         <a href="order_checkout.php">
           <img src="Images/Logo/basket.jpg" class="img_cart" alt="Cart">
         </a>
@@ -337,7 +337,7 @@ else if(isset($_POST['spaghetti_cart']))
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
+          <a href="terms_of_use.php" target="_blank">T&C</a>
           &nbsp&nbsp&nbsp
           <a href="privacy.php" target="_blank">Privacy</a>
         </div>
