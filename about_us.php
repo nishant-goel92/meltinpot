@@ -97,7 +97,7 @@ session_start();
       <div class="col-sm-3 team_col">
         <div class="row">
           <div class="col">
-            <img id="team_image" src="Images/Logo/team1.jpg" alt="Ashwin">
+            <img id="team_image" src="Images/Logo/ashwin.jpg" alt="Ashwin">
           </div>
         </div>
         <div class="row">
@@ -119,7 +119,7 @@ session_start();
       <div class="col-sm-3 team_col">
         <div class="row">
           <div class="col">
-            <img id="team_image" src="Images/Logo/team1.jpg" alt="Ashwin">
+            <img id="team_image" src="Images/Logo/david.jpg" alt="David">
           </div>
         </div>
         <div class="row">
@@ -141,7 +141,7 @@ session_start();
       <div class="col-sm-3 team_col">
         <div class="row">
           <div class="col">
-            <img id="team_image" src="Images/Logo/team2.png" alt="Ashwin">
+            <img id="team_image" src="Images/Logo/nikita.jpg" alt="Nikita">
           </div>
         </div>
         <div class="row">
@@ -156,14 +156,14 @@ session_start();
         </div>
         <div class="row">
           <div class="col">
-            <p class="e">Hi I am Nikita. My favourite food is Chicken Biryani. I make sure the boys behave properly while working.</p>
+            <p class="e">Hi I am Nikita. My favourite food is Chicken Biryani. I make sure the boys play along nicely while working.</p>
           </div>
         </div>
       </div>
       <div class="col-sm-3 team_col">
         <div class="row">
           <div class="col">
-            <img id="team_image" src="Images/Logo/team1.jpg" alt="Ashwin">
+            <img id="team_image" src="Images/Logo/nishant.jpg" alt="Nishant">
           </div>
         </div>
         <div class="row">
