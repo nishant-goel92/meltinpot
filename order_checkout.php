@@ -77,9 +77,15 @@ if(isset($_POST['payment_submit']))
               <td class="right-align bold">Total</td>
               <td class="right-align bold"><?php echo '$' .$total ?></td>
             </tr>
-		  <?php $_SESSION['total'] = $total; } ?>
+		  <?php $_SESSION['total'] = $total; } else { ?>
           </tbody>
         </table>
+        <br>
+		    <div class="empty_cart">
+          <h6 class="a">Uh Oh!! Your cart is empty.</h6>
+          <a href="homepage.php"><span class="arrow"></span>Return To Homepage</a>
+        </div>
+		  <?php } ?>
       </div>
       <div class="col-sm-8 order-sm-1 checkout_col">
         <div class="row checkout_row_mobile">
@@ -106,7 +112,11 @@ if(isset($_POST['payment_submit']))
                 <input type="text" placeholder="State" name="state" class="form-control" required>
               </div>
             </div>
+			<?php if(isset($_SESSION['total'])) {?>
             <button name = "payment_submit" type="submit" class="btn btn-danger">Go to Payment</button>
+			<?php } else { ?>
+			<button name = "payment_submit" type="submit" class="btn btn-danger" disabled>Go to Payment</button>
+			<?php } ?>
           </form>
         </div>
       </div>

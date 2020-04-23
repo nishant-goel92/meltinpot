@@ -34,20 +34,14 @@ session_start();
       </div>
     </div>
     <div class="row">
-	<?php if(isset($_SESSION['sessionId'])) { ?>
       <div class="col-sm-6 text-center">
-        <a href="after_login.php"><span class="arrow"></span>Return To Homepage</a>
-      </div>
-	<?php } else{ ?>
-	<div class="col-sm-6 text-center">
         <a href="homepage.php"><span class="arrow"></span>Return To Homepage</a>
-      </div>
-	<?php } ?>  
+      </div> 
     </div>
   </div>
 
   <div class="jumbotron">
-    <div id="container-fluid">
+    <div id="container-fluid" class="about">
       <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-3">

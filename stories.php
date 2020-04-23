@@ -35,17 +35,13 @@ session_start();
       <div class="col-sm-6 text-center future_pages_col">
         <h5 class="b">Damn!! You're fast.</h5>
         <h5 class="b">You got there before us.</h5>
-	     <?php if(isset($_SESSION['sessionId'])) { ?>
-        <a href="after_login.php"><span class="arrow"></span>Return To Homepage</a>
-	     <?php } else{ ?>
         <a href="homepage.php"><span class="arrow"></span>Return To Homepage</a>
-	     <?php } ?>
       </div> 
     </div>
   </div>
 
   <div class="jumbotron">
-    <div id="container-fluid">
+    <div id="container-fluid" class="about">
       <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-3">

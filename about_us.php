@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,25 +30,158 @@
 
   <div class="about_us_home">
     <div class="row">
-      <div class="col checkout_header">
-        <h4 class="a">Our Story</h4>
+      <div class="col">
+        <h4 class="a">Awww!! You couldn't resist meeting us</h4>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6 about_us_col">
+        <div class="row">
+          <div class="col">
+            <h4 class="a">Our Vision</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="e">To connect the whole world together through the medium of food</p>  
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 about_us_col">
+        <div class="row">
+          <div class="col">
+            <h4 class="a">Our Mission</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="e">MeltinPot aims to serve authentic home-cooked meals from different countries, cultures and traditions across the globe</p>  
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col checkout_header">
-        <p class="a">MeltinPot, founded in College Station, Texas, is a company that aims to serve traditional, home-cooked meals from different cultures across the globe. MeltinPot serves as a meeting place for users to share their cuisines with people hailing from different parts of the world. Since its inception in 2016, the company has served over 500 customers from many areas of the world.</p>
+      <div class="col-sm-6 about_us_col">
+        <div class="row">
+          <div class="col">
+            <h4 class="a">Our Values</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="e">Customer Satisfaction, Quality, Integrity and Personal Accountability is what keeps us focused and motivated</p>  
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 about_us_col">
+        <div class="row">
+          <div class="col">
+            <h4 class="a">Our Essence</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="e">At our core, MeltinPot runs on imagination, creativity, teamwork and ofcourse your love</p>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+          <h4 class="a">Meet our team</h4>
       </div>
     </div>
     <div class="row">
-      <div class="col checkout_header">
-          <h4 class="a">Meet the team</h4>
+      <div class="col-sm-3 team_col">
+        <div class="row">
+          <div class="col">
+            <img id="team_image" src="Images/Logo/team1.jpg" alt="Ashwin">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 class="b">Ashwin Bhide</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 class="b">Backend Developer</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="e">Hi I am Ahswin. My favourite food is Pasta. If the website is not working properly, Nishant worked on it.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-3"></div>
-      <div class="col-sm-3"></div>
-      <div class="col-sm-3"></div>
+      <div class="col-sm-3 team_col">
+        <div class="row">
+          <div class="col">
+            <img id="team_image" src="Images/Logo/team1.jpg" alt="Ashwin">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 class="b">David Zuniga</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 class="b">Business Analyst</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="e">Hi I am David. My favourite food is Chowmein. If you want a new functionality, I am the one who gives them more work.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 team_col">
+        <div class="row">
+          <div class="col">
+            <img id="team_image" src="Images/Logo/team2.png" alt="Ashwin">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 class="b">Nikita Gambani</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 class="b">Product Manager</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="e">Hi I am Nikita. My favourite food is Chicken Biryani. I make sure the boys behave properly while working.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 team_col">
+        <div class="row">
+          <div class="col">
+            <img id="team_image" src="Images/Logo/team1.jpg" alt="Ashwin">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 class="b">Nishant Goel</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5 class="b">Frontend Developer</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="e">Hi I am Nishant. My favourite food is Tiramisu. If the website doesn't look good, I just add a little more #ff0000.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

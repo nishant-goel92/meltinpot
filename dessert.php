@@ -46,7 +46,7 @@ else if(isset($_POST['t_submit']))
       </div>
       <div class="col-1 cart_icon">
         <a href="order_checkout.php">
-          <img src="Images/Logo/basket.jpg" class="img_cart" alt="Cart" data-toggle="modal" data-target="#cart_modal">
+          <img src="Images/Logo/basket.jpg" class="img_cart" alt="Cart">
         </a>
       </div>
     </div>
@@ -183,9 +183,12 @@ else if(isset($_POST['t_submit']))
               </div>
               <div class="row">
                 <div class="col-4"></div>
+                <?php 
+						if(isset($_POST['cp_qty'])) {?>
                 <div class="col-8">
-                  <p class="d">Yay!! Item added to cart</p>
+                  <p class="d">Yay!! <?php echo $_POST['cp_qty']?> item(s) added to cart</p>
                 </div>
+				<?php } ?>
               </div>
             </form>
           </div>
@@ -261,9 +264,12 @@ else if(isset($_POST['t_submit']))
               </div>
               <div class="row">
                 <div class="col-4"></div>
+                <?php 
+						if(isset($_POST['t_qty'])) {?>
                 <div class="col-8">
-                  <p class="d">Yay!! Item added to cart</p>
+                  <p class="d">Yay!! <?php echo $_POST['t_qty']?> item(s) added to cart</p>
                 </div>
+				<?php } ?>
               </div>
             </form>
           </div>
@@ -314,28 +320,6 @@ else if(isset($_POST['t_submit']))
 
   <div class="footer">
     &copyDeveloped by Team 07
-  </div>
-</div>
-
-<!-- The Modal -->
-<div class="modal fade" id="cart_modal">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="a">Cart Message</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <!-- Modal body -->
-      <div class="modal-body">
-        <p class="b">Your cart seems to be empty!!</p>
-        <p class="b">Please add some dishes to continue.</p> 
-      </div>
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-    </div>
   </div>
 </div>
 
