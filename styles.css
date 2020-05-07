@@ -102,11 +102,6 @@ p.d {
   font-size: 14px;
   color: #ff0000; /* red */
 }
-p.e {
-  font-family: "Lucida", cursive, sans-serif;
-  font-size: 16px;
-  padding-top: 2%;
-}
 #logo1 {
   height: 40px;
   width: 180px;
@@ -175,11 +170,6 @@ p.e {
   background-size: cover;
   padding: 8%;
 }
-.admin_home {
-  padding: 15px;
-  width: 100%;
-  height: auto;
-}
 .coming_soon_home {
   height: 700px;
   background-image: url("Images/Background/background_coming_soon.jpg");
@@ -190,9 +180,6 @@ p.e {
 .about_us_home {
   height: auto;
   padding: 3%;
-  background-image: url("Images/Background/background_about_us.jpg");
-  background-position: center;
-  background-size: cover;
 }
 .homepage_top_dishes {
   /*height: 650px;
@@ -231,7 +218,7 @@ p.e {
       -ms-transform: rotate(135deg);
           transform: rotate(135deg);
 }
-.error_home a, .success_home a, .coming_soon_home a, .empty_cart a {
+.error_home a, .success_home a, .coming_soon_home a {
   font-family: 'Raleway', sans-serif;
   display: inline-block;
   font-weight: 700;
@@ -324,10 +311,7 @@ form.homepage_cuisine::after {
 button:hover {
   opacity: 0.7;
 }
-.about a:link {
-  color: #ffffff; /* white */
-}
-.about a:visited {
+a:link {
   color: #ffffff; /* white */
 }
 .bottom-buffer {
@@ -654,24 +638,13 @@ input[type="text"]#item_price{
     border: none;
     background: white;
 }
+.admin_home {
+  padding: 15px;
+  width: 100%;
+  height: auto;
+}
 .admin_col {
   padding: 20px;
-}
-.about_us_col {
-  text-align: center;
-  padding-top: 2%;
-  padding-bottom: 1%;
-  padding-left: 8%;
-  padding-right: 8%;
-}
-#team_image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-.team_col {
-  text-align: center;
-  padding: 2%;
 }
 @media only screen and (max-width: 400px) {
   .homepage_home, .signin_home, .signup_home {
@@ -686,18 +659,15 @@ input[type="text"]#item_price{
   .coming_soon_home {
     background-image: url("Images/Background/background_coming_soon_mobile.jpg");
   }
-  .about_us_home {
-    background-image: url("Images/Background/background_about_us_mobile.jpg");
-  }
   .signin_home {
     height: 600px;
   }
   .signup_home {
     height: 900px;
   }
-  /*.cart_icon {
+  .cart_icon {
     display: none;
-  }*/
+  }
   .heading {
     display: none;
   }

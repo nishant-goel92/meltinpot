@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +38,7 @@ session_start();
   </div>
 
   <div class="jumbotron">
-    <div id="container-fluid" class="about">
+    <div id="container-fluid">
       <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-3">
@@ -69,7 +66,7 @@ session_start();
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.php" target="_blank">T&C</a>
+          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
           &nbsp&nbsp&nbsp
           <a href="privacy.php" target="_blank">Privacy</a>
         </div>

@@ -101,7 +101,7 @@ session_start();?>
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.php" target="_blank">T&C</a>
+          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
           &nbsp&nbsp&nbsp
           <a href="privacy.php" target="_blank">Privacy</a>
         </div>

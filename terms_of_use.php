@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Terms & Conditions</title>
+  <title>Terms of Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,13 +35,17 @@ session_start();
       <div class="col-sm-6 text-center future_pages_col">
         <h5 class="b">Damn!! You're fast.</h5>
         <h5 class="b">You got there before us.</h5>
+	     <?php if(isset($_SESSION['sessionId'])) { ?>
+        <a href="after_login.php"><span class="arrow"></span>Return To Homepage</a>
+	     <?php } else{ ?>
         <a href="homepage.php"><span class="arrow"></span>Return To Homepage</a>
+	     <?php } ?>
       </div> 
     </div>
   </div>
 
   <div class="jumbotron">
-    <div id="container-fluid" class="about">
+    <div id="container-fluid">
       <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-3">
@@ -69,7 +73,7 @@ session_start();
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.php" target="_blank">T&C</a>
+          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
           &nbsp&nbsp&nbsp
           <a href="privacy.php" target="_blank">Privacy</a>
         </div>

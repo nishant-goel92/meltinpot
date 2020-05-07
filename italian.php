@@ -34,7 +34,7 @@ else if(isset($_POST['spaghetti_cart']))
           <img id = "logo1" src="Images/Logo/logo.jpg" alt="Logo">
         </a>
       </div>
-      <div class="col-5 text-right">
+      <div class="col-6 text-right">
         <?php 
 	if(isset($_SESSION['sessionId'])) {?>
 	<button type="button" class="btn login" disabled><?php echo $_SESSION['sessionId'] ?></button>
@@ -44,9 +44,9 @@ else if(isset($_POST['spaghetti_cart']))
     <button type="button" class="btn btn-danger login" onclick="location.href='sign_up.php'">Sign Up</button>
 <?php } ?>
       </div>
-      <div class="col-2 text-center">
+      <div class="col-1 cart_icon">
         <a href="order_checkout.php">
-          <img src="Images/Logo/basket.jpg" class="img_cart" alt="Cart">
+          <img src="Images/Logo/basket.jpg" class="img_cart" alt="Cart" data-toggle="modal" data-target="#cart_modal">
         </a>
       </div>
     </div>
@@ -337,7 +337,7 @@ else if(isset($_POST['spaghetti_cart']))
             <img src="Images/Logo/logo1.jpg" class="rounded-circle" alt="Logo" width="30" height="30">
           </a>
           &nbsp&nbsp&nbsp
-          <a href="terms_of_use.php" target="_blank">T&C</a>
+          <a href="terms_of_use.php" target="_blank">Terms of Service</a>
           &nbsp&nbsp&nbsp
           <a href="privacy.php" target="_blank">Privacy</a>
         </div>
@@ -350,6 +350,28 @@ else if(isset($_POST['spaghetti_cart']))
 
   <div class="footer">
     &copyDeveloped by Team 07
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="cart_modal">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="a">Cart Message</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p class="b">Your cart seems to be empty!!</p>
+        <p class="b">Please add some dishes to continue.</p> 
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,19 +26,40 @@ session_start();
         </a>
       </div>
       <div class="col-6 text-right">
-        <?php 
-	if(isset($_SESSION['sessionId'])) {?>
-	<button type="button" class="btn login" disabled><?php echo $_SESSION['sessionId'] ?></button>
-	<button type="button" class="btn btn-danger login" onclick="location.href='logout.php'">Sign Out</button>
-<?php } else {?>
-	<button type="button" class="btn login" onclick="location.href='sign_in.php'">Sign In</button>
-    <button type="button" class="btn btn-danger login" onclick="location.href='sign_up.php'">Sign Up</button>
-<?php } ?>
+	  <?php 
+		if(isset($_SESSION['sessionId'])) {
+	  ?>
+        <button type="button" class="btn login" disabled><?php echo $_SESSION['sessionId'] ?></button>
+		<?php } else {?>
+		<button type="button" class="btn login" onclick="location.href='sign_in.php'">Sign In</button>
+		<?php } ?>
+        <button type="button" class="btn btn-danger login" onclick="location.href='logout.php'">Log Out</button>
       </div>
       <div class="col-1 cart_icon">
         <a href="order_checkout.php">
           <img src="Images/Logo/basket.jpg" class="img_cart" alt="Cart" data-toggle="modal" data-target="#cart_modal">
         </a>
+        <!-- The Modal -->
+        <div class="modal fade" id="cart_modal">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="a">Cart Message</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                <p class="b">Your cart seems to be empty!!</p>
+                <p class="b">Please add some dishes to continue.</p> 
+              </div>
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -154,37 +176,12 @@ session_start();
           &nbsp&nbsp&nbsp
           <a href="privacy.php" target="_blank">Privacy</a>
         </div>
-        <div class="col text-right">
-          <a href="admin.php" target="_blank">Admin Login</a>
-        </div>
       </div>
     </div>
   </div>
 
   <div class="footer">
     &copyDeveloped by Team 07
-  </div>
-</div>
-
-<!-- The Modal -->
-<div class="modal fade" id="cart_modal">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="a">Cart Message</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <!-- Modal body -->
-      <div class="modal-body">
-        <p class="b">Your cart seems to be empty!!</p>
-        <p class="b">Please add some dishes to continue.</p> 
-      </div>
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-    </div>
   </div>
 </div>
 
